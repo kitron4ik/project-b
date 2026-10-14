@@ -1,8 +1,10 @@
 """Тесты библиотеки утилит."""
 from datetime import datetime
 
-from date_utils import get_current_date, format_date, days_between, add_working_days
-from string_utils import reverse_string, capitalize_words, slugify, truncate
+from date_utils import (get_current_date, format_date, days_between, add_working_days,
+                        is_weekend, start_of_month)
+from string_utils import (reverse_string, capitalize_words, slugify, truncate,
+                          count_words, is_palindrome)
 
 
 def test_get_current_date_format():
@@ -36,3 +38,21 @@ def test_slugify():
 
 def test_truncate():
     assert truncate("abcdefgh", 5) == "abcd…"
+
+
+def test_is_weekend():
+    assert is_weekend(datetime(2026, 10, 10)) is True    # суббота
+    assert is_weekend(datetime(2026, 10, 12)) is False   # понедельник
+
+
+def test_start_of_month():
+    assert start_of_month(datetime(2026, 10, 14, 15, 30)) == datetime(2026, 10, 1)
+
+
+def test_count_words():
+    assert count_words("менеджер задач на Flask") == 4
+
+
+def test_is_palindrome():
+    assert is_palindrome("А роза упала на лапу Азора") is True
+    assert is_palindrome("project") is False

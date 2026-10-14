@@ -30,3 +30,13 @@ def add_working_days(start: datetime, days: int) -> datetime:
         if current.weekday() < 5:
             added += 1
     return current
+
+
+def is_weekend(value: datetime) -> bool:
+    """Возвращает True, если дата приходится на субботу или воскресенье."""
+    return value.weekday() >= 5
+
+
+def start_of_month(value: datetime) -> datetime:
+    """Возвращает первое число месяца для переданной даты."""
+    return value.replace(day=1, hour=0, minute=0, second=0, microsecond=0)

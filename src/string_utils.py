@@ -24,3 +24,14 @@ def truncate(text: str, length: int, suffix: str = "…") -> str:
     if length <= 0:
         raise ValueError("Длина должна быть положительной")
     return text if len(text) <= length else text[: length - len(suffix)] + suffix
+
+
+def count_words(text: str) -> int:
+    """Возвращает количество слов в строке."""
+    return len(text.split())
+
+
+def is_palindrome(text: str) -> bool:
+    """Проверяет, является ли строка палиндромом (без учёта регистра и пробелов)."""
+    cleaned = re.sub(r"\W", "", text.lower(), flags=re.UNICODE)
+    return cleaned == cleaned[::-1]
