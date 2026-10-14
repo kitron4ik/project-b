@@ -8,8 +8,8 @@ def reverse_string(text: str) -> str:
 
 
 def capitalize_words(text: str) -> str:
-    """Делает первую букву каждого слова заглавной."""
-    return " ".join(word.capitalize() for word in text.split())
+    """Делает первую букву каждого слова заглавной, не меняя остальные буквы."""
+    return " ".join(word[:1].upper() + word[1:] for word in text.split())
 
 
 def slugify(text: str) -> str:
