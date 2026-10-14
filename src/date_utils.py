@@ -1,12 +1,13 @@
 """Утилиты для работы с датами."""
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 DEFAULT_FORMAT = "%d.%m.%Y"
 
 
-def get_current_date(fmt: str = DEFAULT_FORMAT) -> str:
-    """Возвращает текущую дату в виде строки."""
-    return datetime.now().strftime(fmt)
+def get_current_date(fmt: str = DEFAULT_FORMAT, utc: bool = False) -> str:
+    """Возвращает текущую дату в виде строки (по UTC при utc=True)."""
+    now = datetime.now(timezone.utc) if utc else datetime.now()
+    return now.strftime(fmt)
 
 
 def format_date(value: datetime, fmt: str = DEFAULT_FORMAT) -> str:
