@@ -61,3 +61,7 @@ def test_is_palindrome():
 def test_format_date_accepts_date():
     from datetime import date
     assert format_date(date(2026, 10, 14)) == "14.10.2026"
+
+
+def test_get_current_date_utc():
+    assert len(get_current_date(utc=True)) == 10
