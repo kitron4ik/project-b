@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.0
+- модуль `file_utils` (текстовые файлы и JSON)
+- модуль `log_utils` (логирование в консоль и файл)
+
 ## 1.1.0
 - `get_current_date` принимает параметр `utc`
 - `format_date` принимает объекты `date`

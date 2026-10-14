@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="project-b-utils",
-    version="1.1.0",
+    version="1.2.0",
     # каталог src сам является пакетом, поэтому find_packages(where="src")
     # не находит ничего; пакет project_b_utils явно сопоставляется с каталогом src
     packages=["project_b_utils"],
