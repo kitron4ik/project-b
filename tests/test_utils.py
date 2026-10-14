@@ -56,3 +56,8 @@ def test_count_words():
 def test_is_palindrome():
     assert is_palindrome("А роза упала на лапу Азора") is True
     assert is_palindrome("project") is False
+
+
+def test_format_date_accepts_date():
+    from datetime import date
+    assert format_date(date(2026, 10, 14)) == "14.10.2026"

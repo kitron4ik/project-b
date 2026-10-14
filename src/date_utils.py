@@ -1,5 +1,5 @@
 """Утилиты для работы с датами."""
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 
 DEFAULT_FORMAT = "%d.%m.%Y"
 
@@ -9,10 +9,10 @@ def get_current_date(fmt: str = DEFAULT_FORMAT) -> str:
     return datetime.now().strftime(fmt)
 
 
-def format_date(value: datetime, fmt: str = DEFAULT_FORMAT) -> str:
-    """Форматирует дату по заданному шаблону."""
-    if not isinstance(value, datetime):
-        raise TypeError("Ожидается объект datetime")
+def format_date(value: datetime | date, fmt: str = DEFAULT_FORMAT) -> str:
+    """Форматирует дату или дату-время по заданному шаблону."""
+    if not isinstance(value, (datetime, date)):
+        raise TypeError("Ожидается объект datetime или date")
     return value.strftime(fmt)
 
 
