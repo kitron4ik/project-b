@@ -56,3 +56,7 @@ def test_count_words():
 def test_is_palindrome():
     assert is_palindrome("А роза упала на лапу Азора") is True
     assert is_palindrome("project") is False
+
+
+def test_get_current_date_utc():
+    assert len(get_current_date(utc=True)) == 10
